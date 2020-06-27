@@ -1,1 +1,1 @@
-A dynamic Tic_Tac_Toe game that can be played by an user-defined number of players as many times as the player so chooses to play.
+A dynamic Tic_Tac_Toe game made in Python3 that can be played by any user-defined number of players as many times as the player so chooses to play.
