@@ -1,5 +1,11 @@
+'''
+Author: Noel Zacharia
+Objective: Recreation of the popular game TicTacToe
+'''
+
 import sys
 
+#Setting up the base of the game i.e. the game matrix
 game = [[0,0,0],[0,0,0],[0,0,0]]
 
 def game_board(player,row,column):
@@ -11,14 +17,18 @@ def game_board(player,row,column):
         print(count,row)
     play(game)
     
-    
+#determines the present status of the game to see if anyone has won
 def play(game_map):
-    
+
+#horizontal checker:
+
     for row in game:
         if row.count(row[0]) == len(row) and row[0] != 0:
             print(f"congrats player{row[0]},you have won")
             sys.exit()
-    
+
+#vertical checker:
+
     for col in range(len(game)):
         checker = []
         for row in game:
@@ -26,7 +36,9 @@ def play(game_map):
         if checker.count(checker[0]) == len(checker) and checker[0] != 0:
             print(f"congrats player{checker[0]},you have won")
             sys.exit()
-            
+
+#diagonal checker:
+          
     diag = []
     for diagonal in range(len(game)):
         diag.append(game[diagonal][diagonal])
@@ -41,7 +53,9 @@ def play(game_map):
             print(f"congrats player{dia[0]},you have won")
             sys.exit()
 
-game_board(0,0,0)  
+game_board(0,0,0) 
+
+#Registers input values to determine playing conditions
 while True:
     players = int(input("plz input your player number:"))
     rows = int(input("which row?"))
